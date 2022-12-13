@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+<title>About Me</title>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style media="screen"> 
+  body{
+background:#e6e6e6;
+}
+#slider{
+width:100%;
+margin:0px auto;
+margin-top: 50px;
+max-width: 500px;
+position:relative;
+overflow:hidden;
+border: 10px solid white;
+box-shadow:2px 5px 10px rgba(0,0,0,0.4);;
+}
+
+.slide{
+width:100%;
+
+display:none;
+animation-name:fade;
+animation-duration:1s;
+
+}
+img{
+width:100%;
+}
+@keyframes fade{
+from{opacity:0.5;}
+to{opacity:1;}
+}
+
+.controls{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:1.5em;
+padding:15px 10px;
+border-radius:5px;
+
+}
+
+.controls:hover{
+background:white;
+transition:0.3s;
+}
+
+.controls:active{
+color:grey;
+}
+
+#left-arrow{
+left:10px;
+}
+
+#right-arrow{
+right:10px;
+}
+
+#dots-con{
+
+text-align:center;
+}
+.dot{
+display:inline-block;
+background:grey;
+padding:8px;
+border-radius:50%;
+margin:10px 5px;
+}
+
+.active{
+background:rgb(7, 67, 213);
+}
+
+@media (max-width:576px){
+#slider{width:100%;
+
+}
+
+.controls{
+  font-size:1em;
+}
+
+#dots-con{
+  display:none;
+}
+}
+  </style>
+<style>
+.myDiv {
+  border: 1px outset white;
+  background-color: #1a1919;    
+  text-align: center;
+}
+</style>
+<style>
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+</style>
+<style>
+.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+</style>
+<style>
+body {
+  background-image: #000000;
+}
+</style>
+</head>
+
+<body style="background-color:#000000;">
+
+
+
+<!--********DETAILS SECTION START********-->
+<a name="up"></a>
+
+<div class="topnav" id="myTopnav">
+  <a href="index.html" style="color:black">Home </a>     
+  <a href="about me.html"style="color:black">About Me</a>      
+  <a href="family.html"style="color:black">Family</a>      
+  <a href="friends.html"style="color:black">Friends</a>        
+  
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>  
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<link href="css/navbar.css" rel="stylesheet" type"text/css"/>
+
+<table width="70%" border="0px" align="center" bgcolor="#0f0e0e">
+
+
+
+<link href="css/vertical rhytm.css" rel="stylesheet" type"text/css"/>
+<!--********CONTENT SECTION START********-->
+<td align="left" width="80%">
+
+
+<!--from this point, the above could be pasted to other hyperlinks-->
+
+<body text="white"/>
+<center><h1 style="font-family:Courier New"> <p style="color:white">To Know me Better!</h1></center>
+ <table border="0">
+ <tr>
+ <td>
+
+
+    <!--Slider-->
+  <div id="slider">
+    <div class="slide" style="background:dodgerBlue;">
+      <img src="image/me3.jpeg" alt="Syazwan with guitar" >
+    </div>
+
+    <div class="slide" style="background:coral;">
+       <img src="image/me6.jpeg" alt="Syazwan is sitting" >
+    </div>
+
+    <div class="slide" style="background:crimson;">
+      <img src="image/me7.jpeg" alt="Syazwan is sitting with guitar" >
+    </div>
+
+    <div class="slide" style="background: #6edf10;">
+      <img src="image/me11.jpeg" alt="Syazwan is holding an electric pole" >
+    </div>
+
+    <!--Controlling arrows-->
+    <span class="controls" onclick="prevSlide(-1)" id="left-arrow"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+  </span>
+    <span class="controls" id="right-arrow" onclick="nextSlide(1)"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+  </span>
+  </div>
+    <div id="dots-con">
+   <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+   </div>
+
+
+<script type="text/javascript">
+var slides = document.querySelectorAll(".slide");
+var dots = document.querySelectorAll(".dot");
+var index = 0;
+
+
+function prevSlide(n){
+  index+=n;
+  console.log("prevSlide is called");
+  changeSlide();
+}
+
+function nextSlide(n){
+  index+=n;
+  changeSlide();
+}
+
+changeSlide();
+
+function changeSlide(){
+
+  if(index>slides.length-1)
+    index=0;
+
+  if(index<0)
+    index=slides.length-1;
+
+
+
+    for(let i=0;i<slides.length;i++){
+      slides[i].style.display = "none";
+
+      dots[i].classList.remove("active");
+
+
+    }
+
+    slides[index].style.display = "block";
+    dots[index].classList.add("active");
+
+
+
+}
+
+</script>
+<h1 style="font-family:Courier New"> <p style="color:white">Personal Details</h1>
+<div class="myDiv">
+<ol>
+  <li style="font-size: 16px; font-family:Courier New; color: #FFFFFF"; align="justify">Name: Muhammad Syazwan Bin Abdul Aziz</li>
+  <li style="font-size: 16px; font-family:Courier New; color: #FFFFFF"; align="justify">Date of Birth: 21/12/2002</li>
+  <li style="font-size: 16px; font-family:Courier New; color: #FFFFFF"; align="justify">Religion: Islam</li>
+  <li style="font-size: 16px; font-family:Courier New; color: #FFFFFF"; align="justify">Nationality: Malaysian</li>
+  <li style="font-size: 16px; font-family:Courier New; color: #FFFFFF"; align="justify">Place of Birth: Hospital Taiping</li>
+  <li style="font-size: 16px; font-family:Courier New; color: #FFFFFF"; align="justify">Place of Residence: Sungai Petani, Kedah</li>
+  <li style="font-size: 16px; font-family:Courier New; color: #FFFFFF"; align="justify">Marital Status: Single</li>
+  <li style="font-size: 16px; font-family:Courier New; color: #FFFFFF"; align="justify">Preferred Leg & Dominant Hand: Right</li>
+  <li style="font-size: 16px; font-family:Courier New; color: #FFFFFF"; align="justify">Favourite Team: Manchester United, Argentina (Fifa World Cup 2022)</li>
+</ol>
+</div>
+<h1  style="font-family:Courier New"> <p style="color:white">Greetings!</h1>
+
+<p style="font-size: 16px; font-family:Courier New; color: #FFFFFF";>Hello, everyone! I am Syazwan. For now, I am pursuing my higher education at UiTM Kedah in bachelor of Information Sciences. 
+I hope I can finish my study, so I can play a lot of video games! ;P</p>
+
+<br>
+<center><a href="#up"><i class="arrow up"></i></a><center>
+</td>
+
+ <td rowspan="3">
+ </td>
+ 
+ <td>
+ </td>
+ 
+ <td>
+ </td>
+ 
+ <td>
+ </td>
+ 
+ <td>
+ </td>
+ 
+ <td>
+ </td>
+ 
+ <td>
+ </td>
+ 
+ <td>
+ </td>
+ 
+ <td>
+ </td>
+ 
+ <td>
+ </td>
+ 
+ <td>
+ </td>
+ 
+ <td>
+ </td>
+ 
+ <td>
+ </td>
+ 
+ 
+</tr>
+ 
+ 
+ </table>
+<!--********CONTENT SECTION END********-->
+
+<!--********SIDEBAR SECTION START********-->
+<td width="20%" valign="top" align="center" bgcolor="#FFFFFF">
+
+<br>
+
+<table border="1" width="100%">
+<tr>
+<td>
+<script>function clock(){var date=new Date();var weekday=date.getDay();var year=date.getYear();var month=date.getMonth();var day=date.getDate();var hour=date.getHours();var minute=date.getMinutes();var second=date.getSeconds();var days=new Array ('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday' );var months=new Array('January','February','March','April','May','June','July','August','September','October','November','December');var monthname=months[month];var dayname=days[weekday];var ap;if(year<1000){year=year+1900} if(hour>=12){hour=hour-12;ap='PM'}else{ap='AM'} if(minute<10){minute='0'+minute} if(second<10){second='0'+second};
+document.getElementById('time').innerHTML=hour+' : '+ minute +' : '+second+' ' +ap; 
+document.getElementById('da').innerHTML=dayname;
+document.getElementById('dt').innerHTML=monthname+' '+day+', '+year;
+setTimeout('clock()',1000 )}window.onload=function(){clock()}
+// Widget Code by https://karvitt.com/widgets/
+</script>
+<div align="center"><div style="font-family:Courier New; color: #000000; font-size: 18px"<div id=outer><div class='ac b'><p style="font-size: 32px"; align="center"><b>Digital Clock</b></div><div id=cover><div id=dt></div><div id=da></div><div id=time></div></div></div>
+</tr>
+	</td>
+	</table>
+
+ 
+
+<table border="1" width="100%" cellpadding="5">
+<tr>
+<td>
+<h1 style="font-size: 20px; font-family:Courier New; color: #000000"; align="center">Others</h1>
+	 </td>
+	 </tr>
+	 <tr>
+	 <td>
+	<p style="font-size: 18px; font-family:Courier New; color: #000000";><a style="font-size: 18px; font-family:Courier New; color: #000000";  href="interests.html"style="color:black">➣ Interests</a></p>
+	<p style="font-size: 18px; font-family:Courier New; color: #000000";><a style="font-size: 18px; font-family:Courier New; color: #000000";  href="gallery.html">➣ Gallery</a></p>
+    <p style="font-size: 18px; font-family:Courier New; color: #000000";><a style="font-size: 18px; font-family:Courier New; color: #000000";  href="contact.html">➣ Contact</a></p>
+	
+</tr>
+	</td>
+	</table>
+
+<br>	
+
+</td>
+<!--********SIDEBAR SECTION END********-->
+
+</tr>
+<!--********DETAILS SECTION END********-->
+
+<!--********FOOTER SECTION START********-->
+<tr bgcolor="#FFFFFF">
+
+<td colspan="2" align="center">
+
+<p style="font-family:Courier New; color: #000000"><strong>Last Updated 12/12/2022</strong></p>
+<p style="font-family:Courier New; color: #000000"><strong>Copyright ©  Muhammad Syazwan Bin Abdul Aziz.</strong></p>
+<p style="font-family:Courier New; color: #000000"><strong>All Rights Reserved.</strong></p>
+
+</td>
+
+</tr>
+<!--********FOOTER SECTION END********-->
+</table>
+
+</body>
+</html>
+

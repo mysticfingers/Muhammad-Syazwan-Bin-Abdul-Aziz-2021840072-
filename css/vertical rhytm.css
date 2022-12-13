@@ -1,0 +1,39 @@
+body {
+ /* Set default font size for mobile only */
+    font-size: 12px;
+    /* Set base line-height for mobile only */
+    line-height: 1.5; /* 18px */
+}
+
+p {
+ margin-top: 1.5em; /* 18px */
+ margin-bottom: 1.5em; /* 18px */
+ 
+ /* !Font-size and line-height for reference only! */
+ /* font-size: 1em; */ /* 14px */
+ /* line-height: 1em; */ /* 18px */
+}
+
+.vertical-spacing-bottom-1x {
+ padding-bottom: 1.5em; /* 18px */
+}
+ 
+.vertical-spacing-bottom-2x {
+ padding-bottom: 3em; /* 36px */
+}
+ 
+.vertical-spacing-bottom-3x {
+ padding-bottom: 4.5em; /* 54px */
+}
+
+.vertical-spacing-top-1x {
+ padding-bottom: 1.5em; /* 18px */
+}
+ 
+.vertical-spacing-top-2x {
+ padding-bottom: 3em; /* 36px */
+}
+ 
+.vertical-spacing-top-3x {
+ padding-bottom: 4.5em; /* 54px */
+}
